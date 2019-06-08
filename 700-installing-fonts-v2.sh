@@ -1,14 +1,8 @@
 #!/bin/bash
 set -e
 ##################################################################################################################
-# Author	:	Erik Dubois
-# Website	:	https://www.erikdubois.be
-# Website	:	https://www.arcolinux.info
-# Website	:	https://www.arcolinux.com
-# Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
-# Website	:	https://www.arcolinuxforum.com
+# Author	:	Jacopo Schiavon
+# Website	:	https://www.github.com/jschiavon
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
@@ -31,11 +25,11 @@ sudo pacman -S ttf-ubuntu-font-family --noconfirm --needed
 sudo pacman -S tamsyn-font --noconfirm --needed
 
 echo "################################################################"
-echo "####        Fonts from Arch Linux repo have been installed        ####"
+echo "####        Fonts from Arch User Repository                 ####"
 echo "################################################################"
 
-sh AUR/install-awesome-font-v*.sh
-sh AUR/install-ttf-font-awesome-v*.sh
+sh utility_scripts/install-ttf-font-awesome-v*.sh
+sh utility_scripts/install-ttf-mac-fonts-v*.sh
 
 echo "################################################################"
 echo "####        Installing fonts for conkies                    ####"

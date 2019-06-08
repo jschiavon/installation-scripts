@@ -1,14 +1,8 @@
 #!/bin/bash
 set -e
 ##################################################################################################################
-# Author	:	Erik Dubois
-# Website	:	https://www.erikdubois.be
-# Website	:	https://www.arcolinux.info
-# Website	:	https://www.arcolinux.com
-# Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
-# Website	:	https://www.arcolinuxforum.com
+# Author	:	Jacopo Schiavon
+# Website	:	https://www.github.com/jschiavon
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
@@ -17,15 +11,13 @@ set -e
 
 
 sudo pacman -S --noconfirm --needed cups cups-pdf
+sudo pacman -S --noconfirm --needed print-manager
 
-#first try if you can print without foomatic
-#sudo pacman -S foomatic-db-engine --noconfirm --needed
-#sudo pacman -S foomatic-db foomatic-db-ppds foomatic-db-nonfree-ppds foomatic-db-gutenprint-ppds --noconfirm --needed
-sudo pacman -S ghostscript gsfonts gutenprint --noconfirm --needed
-sudo pacman -S gtk3-print-backends --noconfirm --needed
+sudo pacman -S ghostscript gsfonts gutenprint cups-filters --noconfirm --needed
+sudo pacman -S --noconfirm --needed foomatic-db foomatic-db-engine foomatic-db-ppds
 sudo pacman -S libcups --noconfirm --needed
 sudo pacman -S hplip --noconfirm --needed
-sudo pacman -S system-config-printer --noconfirm --needed
+sudo pacman -S --noconfirm --needed foomatic-db-gutenprint-ppds
 
 sudo systemctl enable org.cups.cupsd.service
 

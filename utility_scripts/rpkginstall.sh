@@ -8,11 +8,20 @@ set -e
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
 ##################################################################################################################
+pkg=${1}
 
-sudo pacman -Syyu
+function help {
+  echo "Usage: $(basename $0) <package name>"
+  exit 1
+}
 
-yay -Syua
+[ -z ${pkg} ] && help
 
-flatpak update
+REXEC=$(which R)
 
-pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install --user -U
+if [ -z ${REXEC} ]; then
+  echo "R not found, please ensure R is available and try again."
+  exit 1
+fi
+
+echo "install.packages(\"${pkg}\")" | R --no-save

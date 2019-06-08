@@ -1,34 +1,21 @@
 #!/bin/bash
 set -e
 ##################################################################################################################
-# Author	:	Erik Dubois
-# Website	:	https://www.erikdubois.be
-# Website	:	https://www.arcolinux.info
-# Website	:	https://www.arcolinux.com
-# Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
-# Website	:	https://www.arcolinuxforum.com
+# Author	:	Jacopo Schiavon
+# Website	:	https://www.github.com/jschiavon
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
 ##################################################################################################################
-echo "#################################################"
-echo "If it feels like the downloads are too slow"
-echo "Stop the installation with CTRL + C"
-echo "and run the alias - mirror in the terminal"
-echo "#################################################"
-sudo pacman -R xcursor-breeze --noconfirm
 
+echo "################################################################"
+echo "###      Preparing installation and Desktop Environment     ####"
+echo "################################################################"
 sudo pacman -Syyu --noconfirm
-#installing displaymanager or login manager
-#sudo pacman -S --noconfirm --needed lightdm
-#sudo pacman -S --noconfirm --needed arcolinux-lightdm-gtk-greeter arcolinux-lightdm-gtk-greeter-settings
-#sudo pacman -S --noconfirm --needed arcolinux-wallpapers-git
-#installing desktop environment
+
+#installing display manager and desktop environment
 sudo pacman -S sddm --noconfirm --needed
-sudo pacman -S dolphin konsole --noconfirm --needed
 sudo pacman -S plasma --noconfirm --needed
 
 #enabling displaymanager or login manager
@@ -42,4 +29,18 @@ flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/fl
 
 #Remove anything you do not like from the installed applications
 
-#sudo pacman -R ...
+sudo pacman -R oxygen
+
+echo "Creating common folders in correct language"
+xdg-user-dirs-update
+xdg-user-dirs-update --force
+
+echo "Creating private folders we use later"
+
+[ -d $HOME"/.icons" ] || mkdir -p $HOME"/.icons"
+[ -d $HOME"/.themes" ] || mkdir -p $HOME"/.themes"
+[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
+
+echo "################################################################"
+echo "###       personal folders created or existed already       ####"
+echo "################################################################"

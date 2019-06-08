@@ -1,14 +1,8 @@
 #!/bin/bash
 set -e
 ##################################################################################################################
-# Author	:	Erik Dubois
-# Website	:	https://www.erikdubois.be
-# Website	:	https://www.arcolinux.info
-# Website	:	https://www.arcolinux.com
-# Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
-# Website	:	https://www.arcolinuxforum.com
+# Author	:	Jacopo Schiavon
+# Website	:	https://www.github.com/jschiavon
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
@@ -22,7 +16,7 @@ sudo pacman -S --noconfirm --needed bluez
 sudo pacman -S --noconfirm --needed bluez-libs
 sudo pacman -S --noconfirm --needed bluez-utils
 sudo pacman -S --noconfirm --needed bluez-firmware
-sudo pacman -S --noconfirm --needed blueberry
+sudo pacman -S --noconfirm --needed bluedevil
 
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
