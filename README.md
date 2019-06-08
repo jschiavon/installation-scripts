@@ -5,4 +5,4 @@ I plan to add also some scripts for the first part, even though that is way more
 
 This scripts are inspired from the [ArcoLinuxD](https://arcolinuxd.com/) project, and I modified and changed them to follow my tastes and needs.
 
-Moreover, they load my dotfiles configuration, which is stored [here](https://github.com/jschiavon/dotfiles) and is based on the wonderful use of [dotbot](https://github.com/anishathalye/dotbot).
+Moreover, they load my dotfiles configuration, which is stored [here](https://github.com/jschiavon/dotfiles) and is based on the use of the wonderful [dotbot](https://github.com/anishathalye/dotbot).
