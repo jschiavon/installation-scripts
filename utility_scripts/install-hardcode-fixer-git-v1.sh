@@ -62,6 +62,12 @@ else
 		echo "################################################################"
 		packer -S --noconfirm --noedit  $package
 
+    elif pacman -Qi pakku &> /dev/null; then
+
+        echo "################################################################"
+        echo "######### Installing with pakku"
+        echo "################################################################"
+        pakku -S --noconfirm $package
 	fi
 
 	# Just checking if installation was successful

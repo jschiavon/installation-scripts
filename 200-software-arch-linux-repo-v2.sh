@@ -15,6 +15,7 @@ set -e
 echo "Installing category Accessories"
 sudo pacman -S --noconfirm --needed dolphin dolphin-plugins
 sudo pacman -S --noconfirm --needed konsole yakuake
+sudo pacman -S --noconfirm --needed latte-dock
 sudo pacman -S --noconfirm --needed ark
 sudo pacman -S --noconfirm --needed kalarm
 sudo pacman -S --noconfirm --needed kate kcalc
@@ -26,8 +27,8 @@ sudo pacman -S --noconfirm --needed kdialog kfind
 sudo pacman -S --noconfirm --needed kwalletmanager
 
 echo "Installing category Development"
-sudo pacman -S --noconfirm --needed kile
 sudo pacman -S --noconfirm --needed gcc gcc-fortran
+sudo pacman -S --noconfirm --needed python r
 
 echo "Installing category Education"
 
@@ -46,7 +47,7 @@ echo "Installing category Multimedia"
 sudo pacman -S --noconfirm --needed vlc
 
 echo "Installing category Office"
-sudo pacman -S --noconfirm --needed texlive-most
+sudo pacman -S --noconfirm --needed texlive-most kile
 
 echo "Installing category Other"
 
@@ -66,6 +67,7 @@ sudo pacman -S --noconfirm --needed spectacle
 sudo pacman -S --noconfirm --needed wget
 sudo pacman -S --noconfirm --needed neofetch
 sudo pacman -S --noconfirm --needed zsh zsh-completions zsh-syntax-highlighting
+sudo pacman -S --noconfirm --needed xdotool
 
 ###############################################################################################
 

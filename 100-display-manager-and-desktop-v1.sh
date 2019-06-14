@@ -18,9 +18,13 @@ sudo pacman -Syyu --noconfirm
 sudo pacman -S sddm --noconfirm --needed
 sudo pacman -S plasma --noconfirm --needed
 
-#enabling displaymanager or login manager
+#enabling displaymanager
 sudo systemctl enable sddm.service -f
 sudo systemctl set-default graphical.target
+
+#enable NetworkManager service
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
 
 # install flatpak and configure flathub repository
 sudo pacman -S flatpak --noconfirm --needed
@@ -29,7 +33,7 @@ flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/fl
 
 #Remove anything you do not like from the installed applications
 
-sudo pacman -R oxygen
+sudo pacman -R oxygen discover
 
 echo "Creating common folders in correct language"
 xdg-user-dirs-update
