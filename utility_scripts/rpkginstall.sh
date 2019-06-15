@@ -24,4 +24,6 @@ if [ -z ${REXEC} ]; then
   exit 1
 fi
 
-echo "install.packages(\"${pkg}\")" | R --no-save
+[ -d $HOME"/.local/lib/R/3.6" ] || mkdir -p $HOME"/.local/lib/R/3.6"
+
+echo "install.packages(\"${pkg}\", lib=\"~/.local/lib/R/3.6\")" | R --no-save

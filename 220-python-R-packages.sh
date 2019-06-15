@@ -26,13 +26,19 @@ pip install --user joblib tqdm ipython jupyter jupyterthemes
 pip install --user matplotlib seaborn bokeh
 
 # Preparing R environment
-echo "cat(\"Setting Padova repository\")\nr = getOption(\"repos\")\nr[\"CRAN\"] = \"https://cran.stat.unipd.it/\"\noptions(repos = r)\nrm(r)" > ~/.Rprofile
+echo 'cat("Setting Padova repository\n")' > ~/.Rprofile
+echo 'r = getOption("repos")' >> ~/.Rprofile
+echo 'r["CRAN"] = "https://cran.stat.unipd.it/"' >> ~/.Rprofile
+echo 'options(repos = r)' >> ~/.Rprofile
+echo 'rm(r)' >> ~/.Rprofile
+
+export R_LIBS_USER=~/.local/lib/R/3.6
 
 # Installing R packages
-~/installation-scripts/utility_scripts/rpkginstall.sh ggplot2
-~/installation-scripts/utility_scripts/rpkginstall.sh dplyr
-~/installation-scripts/utility_scripts/rpkginstall.sh rstan
-~/installation-scripts/utility_scripts/rpkginstall.sh IRkernel
+utility_scripts/rpkginstall.sh ggplot2
+utility_scripts/rpkginstall.sh dplyr
+utility_scripts/rpkginstall.sh rstan
+utility_scripts/rpkginstall.sh IRkernel
 
 # Configuring Jupyter to use R kernel
 echo "IRkernel::installspec()" | R --no-save
