@@ -13,11 +13,13 @@ echo "Installing python packages with pip"
 
 sudo pacman -S --noconfirm --needed python-pip
 
+pip install --user pipupgrade
+
 # Base numerical and data management packages
 pip install --user numpy scipy pandas
 
 # Statistics and Machine learning
-pip install --user scikit-learn hdbscan statsmodels
+pip install --user scikit-learn hdbscan statsmodels pystan pymc3
 
 # Parallel computing - utilities - notebook
 pip install --user joblib tqdm ipython jupyter jupyterthemes
