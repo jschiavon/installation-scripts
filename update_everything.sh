@@ -13,5 +13,6 @@ pakku -Syyu
 
 flatpak update
 
-pipupgrade
-pipupgrade --self
+sudo pipugrade
+pipupgrade --user
+pipupgrade --user --self
