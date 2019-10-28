@@ -16,15 +16,15 @@ set -e
 #only if you run into issues with that
 #sudo mount -o remount,size=5G,noatime /tmp
 
-echo "Installing pakku AUR helper"
-git clone https://aur.archlinux.org/pakku.git
-cd pakku
+echo "Installing yay AUR helper"
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
 
 cd ..
-rm -rf pakku
+rm -rf yay
 
-echo "pakku AUR helper installed"
+echo "yay AUR helper installed"
 
 
 echo "Installing category Accessories"

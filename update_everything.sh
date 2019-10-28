@@ -9,10 +9,10 @@ set -e
 #
 ##################################################################################################################
 
-pakku -Syyu
+yay -Syyu
 
 flatpak update
 
-sudo pipugrade
+#sudo pipugrade
 pipupgrade --user
 pipupgrade --user --self
